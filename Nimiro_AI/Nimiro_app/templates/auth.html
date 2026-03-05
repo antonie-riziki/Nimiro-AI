@@ -105,6 +105,7 @@
             <div class="p-8">
                 <!-- Sign In Form -->
                 <form id="form-signin" class="space-y-5 fade-in block" action="{% url 'dashboard-page' %}">
+                    {% csrf_token %}
                     <div>
                         <label for="signin-email" class="block text-sm font-medium text-stone-700 mb-1">Email
                             Address</label>
@@ -195,6 +196,7 @@
 
                 <!-- Sign Up Form -->
                 <form id="form-signup" class="space-y-4 fade-in hidden" action="{% url 'dashboard-page' %}">
+                    {% csrf_token %}
                     <div>
                         <label for="signup-name" class="block text-sm font-medium text-stone-700 mb-1">Full Name</label>
                         <div class="relative">
