@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>FarmFlow - Smart Agriculture for Smallholders</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2D4F35",
+                        secondary: "#D1E2C4",
+                        accent: "#FFD23F",
+                        "background-light": "#F9FAFB",
+                        "background-dark": "#0F1711",
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                        body: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        'xl': "1.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div
+        class="fixed top-0 w-full z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur h-11 flex items-center justify-between px-6">
+        <span class="text-sm font-semibold">9:41</span>
+        <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-base">signal_cellular_4_bar</span>
+            <span class="material-symbols-outlined text-base">wifi</span>
+            <span class="material-symbols-outlined text-base">battery_full</span>
+        </div>
+    </div>
+    <main class="pt-11 pb-24">
+        <section class="relative h-[80vh] flex flex-col justify-end p-6 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img alt="Lush green farm field" class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhDaGLH2NCTlvDMhF9vAmq-0VSepaBLimfvuPjQgXxW1gGHuZq3lIxIiQSA0FJ8ad1s3ihkXXlROWBNpRTD2TYZkkMneASxh7gR6OMu7bD2ppqGllOtD9XOiswd-QHX59hCZpJI0c-0ATiKSNnt8klpt9CCYhACEPOLH0hnIfCuV313op1wKRWKOCUNkc_V4jDHtOKAnu4tik02xMwnmaUJiJAdP6uLpweTt8g3UFwsCHrl55paTf8S4vFPl7Gsam3Twd70wMmg6zr" />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent"></div>
+            </div>
+            <div class="relative z-10 space-y-4">
+                <div class="inline-flex items-center gap-2 bg-accent px-3 py-1 rounded-full">
+                    <span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+                    <span class="text-primary text-xs font-bold uppercase tracking-wider">Smart Farming</span>
+                </div>
+                <h1 class="text-4xl font-extrabold text-white leading-tight">Grow Smarter,<br />Yield Better.</h1>
+                <p class="text-white/80 text-lg max-w-[280px]">Empowering smallholder farmers with AI-driven insights
+                    and market intelligence.</p>
+                <div class="pt-4 flex flex-col gap-3">
+                    <button
+                        class="w-full bg-white text-primary font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-xl active:scale-95 transition-transform">
+                        Access Dashboard
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                    <button
+                        class="w-full bg-primary/20 backdrop-blur-md border border-white/20 text-white font-semibold py-4 rounded-xl active:scale-95 transition-transform">
+                        Learn How it Works
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="px-6 py-12">
+            <div class="flex items-end justify-between mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold dark:text-white">Built for You</h2>
+                    <p class="text-slate-500 dark:text-slate-400">Everything a modern farm needs</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 gap-4">
+                <div
+                    class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-xl">
+                        <span class="material-symbols-outlined text-primary">science</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg dark:text-white">Soil Testing</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Real-time analysis of pH, Nitrogen, and
+                            moisture levels.</p>
+                    </div>
+                </div>
+                <div
+                    class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-xl">
+                        <span class="material-symbols-outlined text-primary">eco</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg dark:text-white">Crop Selection</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Personalized recommendations based on your
+                            land data.</p>
+                    </div>
+                </div>
+                <div
+                    class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-xl">
+                        <span class="material-symbols-outlined text-primary">trending_up</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg dark:text-white">Market Intelligence</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Daily price updates and buyer connections.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="px-6 py-12 bg-primary dark:bg-slate-900 overflow-hidden relative">
+            <div class="absolute -right-20 top-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl"></div>
+            <h2 class="text-2xl font-bold text-white mb-8">Three Steps to Success</h2>
+            <div class="space-y-12 relative">
+                <div class="flex gap-6">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-10 h-10 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-lg z-10">
+                            1</div>
+                        <div class="flex-grow w-0.5 bg-white/20 mt-2"></div>
+                    </div>
+                    <div class="pb-4">
+                        <h3 class="text-white font-bold text-xl mb-2">Connect Sensor</h3>
+                        <p class="text-white/70">Simply place your FarmFlow sensor in the soil. It connects
+                            automatically to our cloud.</p>
+                        <img alt="Farmer holding device" class="mt-4 rounded-xl w-full h-32 object-cover opacity-80"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3kzO1Z60ZKutLpCL9ZAUFhNNImHTUHRwULxOEo_mR0SbW5gO5rcNCcmoRLH-mDOGBM1uEvqfQrJy7tIBkryMRrVY3f1SdZ_6rGkakjh9Xzc_tPm0nzsuVhRURCWj8bGqXakIPYTfILhi89LGnlAhJX0r5dvCsotBHJLeunBudteBUUcOaloBVTk5A7C9q56SyVVZeJg_OCK0PXQvJ51w2lJQVaoMNMlgoHy2IEYWg_w0vJKjaoOy6LPfh9rh1PBJSAo2bk1bSBxvc" />
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-10 h-10 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-lg z-10">
+                            2</div>
+                        <div class="flex-grow w-0.5 bg-white/20 mt-2"></div>
+                    </div>
+                    <div class="pb-4">
+                        <h3 class="text-white font-bold text-xl mb-2">Get AI Analysis</h3>
+                        <p class="text-white/70">Receive instant analysis and specific crop advice tailored for your
+                            soil profile.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-10 h-10 rounded-full bg-accent text-primary flex items-center justify-center font-bold text-lg z-10">
+                            3</div>
+                    </div>
+                    <div class="pb-4">
+                        <h3 class="text-white font-bold text-xl mb-2">Maximize Profit</h3>
+                        <p class="text-white/70">Connect with regional buyers at the peak of your harvest for the best
+                            market prices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="px-6 py-12">
+            <h2 class="text-2xl font-bold mb-8 dark:text-white">Farmer Stories</h2>
+            <div class="flex overflow-x-auto gap-4 pb-4 no-scrollbar">
+                <div
+                    class="min-w-[280px] bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+                    <div class="flex text-accent mb-4">
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">star</span>
+                    </div>
+                    <p class="italic text-slate-600 dark:text-slate-400 mb-4">"My yield increased by 40% after switching
+                        to the recommended crop for my soil type."</p>
+                    <div class="flex items-center gap-3">
+                        <img alt="Farmer avatar" class="w-10 h-10 rounded-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAizroKbOlE8qjEWhnvxiL2ScH3Rvyv4Ojg6eHaHYymI4BYGK1OumxN80JFoFKfeRTFoIvFn8pGe_u34iqS0slnEPHw4i1k0JnQFdiNTyjoU_E9XNNvh6vGXRxyPsHPzI949hLdDWGsoWdDV3pynkMRls4HbsO-0zfVMvJ64XEcU2mW0tibzm7maWZNGFTZ8LXuTdVCi8BmNzrJsoLNLlDYalFt1IHhuuDSITXOThwNPfqzVFg4_GflrXZ-Grak-vgfH1uIBiFWzJx1" />
+                        <div>
+                            <p class="font-bold text-sm dark:text-white">Samuel N.</p>
+                            <p class="text-xs text-slate-500">Maize Farmer</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="min-w-[280px] bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+                    <div class="flex text-accent mb-4">
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">star</span>
+                    </div>
+                    <p class="italic text-slate-600 dark:text-slate-400 mb-4">"The market intelligence feature helped me
+                        find buyers I never knew existed."</p>
+                    <div class="flex items-center gap-3">
+                        <img alt="Farmer avatar" class="w-10 h-10 rounded-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuALaBSM77taUzvRVcaTJE99__ksAWoYvlgq8qhoynf8aLqMCUdrc4oMTHFRGm-wGg_qiIsCynWtovIS9OC4KxPRrP84_Q1T3EBgcX3kpuwwAnrw-PHZLpb9AgpiTZad5mJm5Q1enRTkyoWf8MFJqNdcJdganeEAPSqsqmE9LXG2YRGK042z9G6b7xstIam_ZhVfdClwxfQ05xe65-unWM2Q8xXg7ckUKcZuZqhrt1tKAyz7wAlchSOtGQtRzWkdYF99am5432cRCt_9" />
+                        <div>
+                            <p class="font-bold text-sm dark:text-white">Fatuma O.</p>
+                            <p class="text-xs text-slate-500">Vegetable Grower</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="px-6 py-8">
+            <div class="bg-primary rounded-3xl p-8 text-center text-white relative overflow-hidden">
+                <div class="absolute -left-10 -top-10 w-40 h-40 bg-white/10 rounded-full"></div>
+                <h2 class="text-2xl font-extrabold mb-4 relative z-10">Ready to transform your farm?</h2>
+                <p class="text-white/70 mb-8 relative z-10">Join over 10,000 farmers growing with data-driven insights.
+                </p>
+                <button
+                    class="bg-accent text-primary px-8 py-4 rounded-xl font-bold w-full shadow-lg relative z-10 active:scale-95 transition-transform">
+                    Start Your Free Trial
+                </button>
+            </div>
+        </section>
+        <footer class="px-6 py-8 text-center border-t border-slate-100 dark:border-slate-800 mt-8">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-sm">agriculture</span>
+                </div>
+                <span class="text-xl font-extrabold text-primary dark:text-white">FarmFlow</span>
+            </div>
+            <p class="text-xs text-slate-400">© 2024 FarmFlow Smart Agriculture Solutions. All rights reserved.</p>
+        </footer>
+    </main>
+    <nav
+        class="fixed bottom-0 w-full bg-white/80 dark:bg-background-dark/80 ios-blur border-t border-slate-100 dark:border-slate-800 py-3 px-8 flex justify-between items-center z-50">
+        <div class="flex flex-col items-center gap-1 text-primary">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] font-bold">Home</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined">bar_chart</span>
+            <span class="text-[10px] font-medium">Market</span>
+        </div>
+        <div class="relative -top-6">
+            <button
+                class="bg-primary text-white w-14 h-14 rounded-full shadow-xl flex items-center justify-center border-4 border-background-light dark:border-background-dark">
+                <span class="material-symbols-outlined text-2xl">grid_view</span>
+            </button>
+        </div>
+        <div class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined">description</span>
+            <span class="text-[10px] font-medium">Reports</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-[10px] font-medium">Profile</span>
+        </div>
+    </nav>
+    <script>
+        // Check for system preference
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+</body>
+
+</html>
