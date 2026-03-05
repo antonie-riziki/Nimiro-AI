@@ -15,27 +15,27 @@
 
     <nav class="flex-1 overflow-y-auto py-6 px-4 space-y-2 no-scrollbar">
         <a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary dark:bg-secondary/10 dark:text-secondary rounded-xl font-semibold transition-colors"
-            href="#">
+            href="{% url 'dashboard-page' %}">
             <span class="material-icons-round">home</span>
             <span>Dashboard</span>
         </a>
         <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 hover:text-slate-800 dark:hover:bg-slate-800/50 dark:hover:text-slate-200 rounded-xl font-medium transition-colors"
-            href="#">
+            href="{% url 'land-map-page' %}">
             <span class="material-icons-round">explore</span>
             <span>Land Map</span>
         </a>
         <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 hover:text-slate-800 dark:hover:bg-slate-800/50 dark:hover:text-slate-200 rounded-xl font-medium transition-colors"
-            href="#">
+            href="{% url 'market-intelligence' %}">
             <span class="material-icons-round">shopping_basket</span>
             <span>Market</span>
         </a>
         <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 hover:text-slate-800 dark:hover:bg-slate-800/50 dark:hover:text-slate-200 rounded-xl font-medium transition-colors"
-            href="#">
+            href="{% url 'analysis-page' %}">
             <span class="material-icons-round">science</span>
             <span>Analysis</span>
         </a>
         <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 hover:text-slate-800 dark:hover:bg-slate-800/50 dark:hover:text-slate-200 rounded-xl font-medium transition-colors"
-            href="#">
+            href="{% url 'credit-page' %}">
             <span class="material-icons-round">credit_score</span>
             <span>Credit</span>
         </a>
@@ -43,7 +43,7 @@
 
     <div class="p-4 border-t border-slate-200 dark:border-slate-800">
         <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 hover:text-slate-800 dark:hover:bg-slate-800/50 dark:hover:text-slate-200 rounded-xl font-medium transition-colors"
-            href="#">
+            href="{% url 'profile-page' %}">
             <span class="material-icons-round">person</span>
             <span>Profile</span>
         </a>

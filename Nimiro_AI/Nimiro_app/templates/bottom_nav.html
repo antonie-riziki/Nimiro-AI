@@ -1,7 +1,8 @@
 <nav
     class="md:hidden fixed bottom-0 inset-x-0 bg-white/90 dark:bg-background-dark/95 ios-blur border-t border-slate-200 dark:border-slate-800 pb-8 pt-3 px-6 z-50">
     <div class="flex items-center justify-between max-w-lg mx-auto relative px-2">
-        <a class="flex flex-col items-center gap-1.5 text-primary dark:text-secondary group" href="#">
+        <a class="flex flex-col items-center gap-1.5 text-primary dark:text-secondary group"
+            href="{% url 'dashboard-page' %}">
             <div class="relative">
                 <span class="material-icons-round text-[26px]">home</span>
                 <span
@@ -10,7 +11,7 @@
             <span class="text-[10px] font-bold uppercase tracking-tighter transition-all">Home</span>
         </a>
         <a class="flex flex-col items-center gap-1.5 text-slate-400 hover:text-primary dark:hover:text-secondary transition-colors"
-            href="#">
+            href="{% url 'land' %}">
             <span class="material-icons-round text-[26px]">explore</span>
             <span class="text-[10px] font-medium uppercase tracking-tighter">Map</span>
         </a>
@@ -24,12 +25,12 @@
         </div>
 
         <a class="flex flex-col items-center gap-1.5 text-slate-400 hover:text-primary dark:hover:text-secondary transition-colors"
-            href="#">
+            href="{% url 'market-intelligence' %}">
             <span class="material-icons-round text-[26px]">shopping_basket</span>
             <span class="text-[10px] font-medium uppercase tracking-tighter">Market</span>
         </a>
         <a class="flex flex-col items-center gap-1.5 text-slate-400 hover:text-primary dark:hover:text-secondary transition-colors"
-            href="#">
+            href="{% url 'profile-page' %}">
             <span class="material-icons-round text-[26px]">person</span>
             <span class="text-[10px] font-medium uppercase tracking-tighter">Profile</span>
         </a>

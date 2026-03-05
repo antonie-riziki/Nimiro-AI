@@ -15,3 +15,12 @@ def farming_guide(request):
 
 def market_intelligence(request):
     return render(request, 'market_intelligence.html')
+
+def profile_page(request):
+    return render(request, 'profile_page.html')
+
+def landmap(request):
+    return render(request, 'landmap.html')
+
+def credit_score(request):
+    return render(request, 'credit_score.html')
