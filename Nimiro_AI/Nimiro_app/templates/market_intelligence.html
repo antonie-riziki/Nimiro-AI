@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Market Intelligence Rankings</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2D4B37", // Earthy dark green from screenshot
+                        secondary: "#89A74E", // Lighter green for accents
+                        "background-light": "#F8F9F8",
+                        "background-dark": "#0F1A13",
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 min-h-screen pb-24">
+    <div
+        class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur px-6 py-4 flex items-center justify-between border-b border-slate-200 dark:border-slate-800">
+        <div class="flex items-center gap-3">
+            <button class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800">
+                <span class="material-icons-round text-primary dark:text-secondary">arrow_back_ios_new</span>
+            </button>
+            <h1 class="text-xl font-bold tracking-tight">Market Intelligence</h1>
+        </div>
+        <button class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800">
+            <span class="material-icons-round text-primary dark:text-secondary">search</span>
+        </button>
+    </div>
+    <main class="p-4 space-y-6">
+        <div
+            class="relative w-full h-64 rounded-3xl overflow-hidden shadow-lg border-2 border-white dark:border-slate-800">
+            <img alt="Local Market Map" class="w-full h-full object-cover grayscale-[20%]"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ7_rbmGLXp-i4xhb4-BuKq8LJH7oWYzRVPJKxaXwpnmoLPFOOyzQlwDUnf2fzSfx03NqeSie_CSTHOujP3iQKXdQtjmHeK79VwSM33L9ReuuklbvZsTxvSBl-Z6pZLxyBy3b-WHk2F7McghOOLvTxP3wRtXXN-PIICRrxcCOn2XjJ4HrBHh9uUkqAk6qMikYjCQOYJfFr4sPao_FEKaL6BRXsHQOCzrXKgSCMK4MTqzKgLmVc0W-TjwlhzYBoVCtjImzEH5MLYUF_" />
+            <div class="absolute inset-0 bg-black/10 pointer-events-none"></div>
+            <div class="absolute top-1/4 left-1/3 group">
+                <div
+                    class="bg-primary text-white p-2 rounded-xl shadow-xl flex items-center gap-2 transform transition-transform group-active:scale-95">
+                    <span class="font-bold text-xs">Nairobi Central</span>
+                    <span class="text-[10px] bg-white/20 px-1 rounded">24km</span>
+                </div>
+                <div class="w-3 h-3 bg-primary mx-auto -mt-1 rotate-45"></div>
+            </div>
+            <div class="absolute bottom-1/3 right-1/4 group">
+                <div class="bg-secondary text-white p-2 rounded-xl shadow-xl flex items-center gap-2">
+                    <span class="font-bold text-xs">Thika Market</span>
+                    <span class="text-[10px] bg-white/20 px-1 rounded">8km</span>
+                </div>
+                <div class="w-3 h-3 bg-secondary mx-auto -mt-1 rotate-45"></div>
+            </div>
+            <div class="absolute bottom-4 right-4 flex flex-col gap-2">
+                <button
+                    class="w-10 h-10 bg-white dark:bg-slate-800 rounded-full shadow-lg flex items-center justify-center">
+                    <span class="material-icons-round text-primary">my_location</span>
+                </button>
+                <button
+                    class="w-10 h-10 bg-white dark:bg-slate-800 rounded-full shadow-lg flex items-center justify-center">
+                    <span class="material-icons-round text-primary">layers</span>
+                </button>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar pb-2">
+            <button
+                class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap flex items-center gap-2">
+                <span class="material-icons-round text-sm">trending_up</span>
+                Best Price
+            </button>
+            <button
+                class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap flex items-center gap-2">
+                <span class="material-icons-round text-sm text-slate-400">near_me</span>
+                Nearest
+            </button>
+            <button
+                class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap flex items-center gap-2">
+                <span class="material-icons-round text-sm text-slate-400">high_quality</span>
+                Road Quality
+            </button>
+        </div>
+        <div class="space-y-4">
+            <div class="flex justify-between items-center px-2">
+                <h2 class="text-lg font-bold">Recommended Markets</h2>
+                <span
+                    class="text-xs text-slate-500 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Updated
+                    5m ago</span>
+            </div>
+            <div
+                class="bg-white dark:bg-slate-900 p-5 rounded-[24px] shadow-sm border border-slate-100 dark:border-slate-800 space-y-4 relative overflow-hidden group">
+                <div class="flex justify-between items-start">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-14 h-14 bg-secondary/10 dark:bg-secondary/20 rounded-2xl flex items-center justify-center text-primary dark:text-secondary">
+                            <span class="material-icons-round text-3xl">storefront</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Nairobi Central Market</h3>
+                            <div class="flex items-center gap-2 text-slate-500 text-sm">
+                                <span class="material-icons-round text-xs">location_on</span>
+                                24.5 km away
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-primary font-bold text-xl">KES 4,200</div>
+                        <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Per Bag (Maize)</div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                    <div
+                        class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-2xl border border-slate-100 dark:border-slate-700/50">
+                        <div class="flex items-center gap-1.5 mb-1">
+                            <span class="material-icons-round text-sm text-blue-500">cloud</span>
+                            <span class="text-[10px] font-bold text-slate-500 uppercase">Weather</span>
+                        </div>
+                        <p class="text-sm font-semibold">24°C • Sunny</p>
+                    </div>
+                    <div
+                        class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-2xl border border-slate-100 dark:border-slate-700/50">
+                        <div class="flex items-center gap-1.5 mb-1">
+                            <span class="material-icons-round text-sm text-orange-500">add_road</span>
+                            <span class="text-[10px] font-bold text-slate-500 uppercase">Road Score</span>
+                        </div>
+                        <p class="text-sm font-semibold">4.8 / 5.0</p>
+                    </div>
+                    <div
+                        class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-2xl border border-slate-100 dark:border-slate-700/50">
+                        <div class="flex items-center gap-1.5 mb-1">
+                            <span class="material-icons-round text-sm text-green-500">trending_up</span>
+                            <span class="text-[10px] font-bold text-slate-500 uppercase">Demand</span>
+                        </div>
+                        <p class="text-sm font-semibold text-green-600">High</p>
+                    </div>
+                </div>
+                <button
+                    class="w-full bg-primary text-white py-3.5 rounded-2xl font-bold flex items-center justify-center gap-2 transition-transform active:scale-[0.98]">
+                    View Routes &amp; Logistics
+                    <span class="material-icons-round text-sm">arrow_forward</span>
+                </button>
+            </div>
+            <div
+                class="bg-white dark:bg-slate-900 p-5 rounded-[24px] shadow-sm border border-slate-100 dark:border-slate-800 space-y-4 relative overflow-hidden">
+                <div class="flex justify-between items-start">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-14 h-14 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-slate-400">
+                            <span class="material-icons-round text-3xl">store</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Thika Wholesale Hub</h3>
+                            <div class="flex items-center gap-2 text-slate-500 text-sm">
+                                <span class="material-icons-round text-xs">location_on</span>
+                                8.2 km away
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-primary font-bold text-xl">KES 3,850</div>
+                        <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Per Bag (Maize)</div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                    <div
+                        class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-2xl border border-slate-100 dark:border-slate-700/50">
+                        <div class="flex items-center gap-1.5 mb-1">
+                            <span class="material-icons-round text-sm text-slate-400">cloud_queue</span>
+                            <span class="text-[10px] font-bold text-slate-500 uppercase">Weather</span>
+                        </div>
+                        <p class="text-sm font-semibold">Rainy (60%)</p>
+                    </div>
+                    <div
+                        class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-2xl border border-slate-100 dark:border-slate-700/50">
+                        <div class="flex items-center gap-1.5 mb-1">
+                            <span class="material-icons-round text-sm text-yellow-500">warning</span>
+                            <span class="text-[10px] font-bold text-slate-500 uppercase">Road Score</span>
+                        </div>
+                        <p class="text-sm font-semibold">2.5 / 5.0</p>
+                    </div>
+                    <div
+                        class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-2xl border border-slate-100 dark:border-slate-700/50">
+                        <div class="flex items-center gap-1.5 mb-1">
+                            <span class="material-icons-round text-sm text-slate-400">horizontal_rule</span>
+                            <span class="text-[10px] font-bold text-slate-500 uppercase">Demand</span>
+                        </div>
+                        <p class="text-sm font-semibold text-slate-600">Stable</p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-slate-900 p-5 rounded-[24px] shadow-sm border border-slate-100 dark:border-slate-800 space-y-4 relative overflow-hidden">
+                <div class="flex justify-between items-start">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-14 h-14 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-slate-400">
+                            <span class="material-icons-round text-3xl">agriculture</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Kiambu Local Market</h3>
+                            <div class="flex items-center gap-2 text-slate-500 text-sm">
+                                <span class="material-icons-round text-xs">location_on</span>
+                                12.1 km away
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-primary font-bold text-xl">KES 4,050</div>
+                        <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Per Bag (Maize)</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 text-xs font-bold text-slate-400 uppercase tracking-tight">
+                    <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                        Clear</span>
+                    <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-400"></span> Paved
+                        Road</span>
+                    <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-orange-400"></span> Med
+                        Demand</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-primary/5 dark:bg-primary/10 p-6 rounded-[28px] border border-primary/10">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-bold">Market Price Insights</h3>
+                <span class="material-icons-round text-primary">info</span>
+            </div>
+            <div class="flex items-end gap-1 h-24 mb-4">
+                <div class="bg-primary/20 flex-1 rounded-t-lg" style="height: 40%"></div>
+                <div class="bg-primary/20 flex-1 rounded-t-lg" style="height: 60%"></div>
+                <div class="bg-primary/20 flex-1 rounded-t-lg" style="height: 55%"></div>
+                <div class="bg-primary/20 flex-1 rounded-t-lg" style="height: 80%"></div>
+                <div class="bg-primary/40 flex-1 rounded-t-lg" style="height: 70%"></div>
+                <div class="bg-primary flex-1 rounded-t-lg" style="height: 95%"></div>
+                <div class="bg-secondary flex-1 rounded-t-lg" style="height: 85%"></div>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Prices for <span
+                    class="font-bold text-primary dark:text-secondary">Maize</span> are projected to rise by 8% in the
+                next week due to high demand in Nairobi Central.</p>
+        </div>
+    </main>
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/80 ios-blur border-t border-slate-200 dark:border-slate-800 px-6 py-3 flex justify-between items-center z-50">
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-icons-round">dashboard</span>
+            <span class="text-[10px] font-bold uppercase">Home</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-icons-round">biotech</span>
+            <span class="text-[10px] font-bold uppercase">Soil</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-primary dark:text-secondary">
+            <span class="material-icons-round scale-110">analytics</span>
+            <span class="text-[10px] font-bold uppercase">Market</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-icons-round">calendar_today</span>
+            <span class="text-[10px] font-bold uppercase">Crops</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-icons-round">person</span>
+            <span class="text-[10px] font-bold uppercase">Profile</span>
+        </button>
+    </nav>
+
+</body>
+
+</html>
