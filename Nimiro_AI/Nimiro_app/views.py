@@ -24,3 +24,6 @@ def landmap(request):
 
 def credit_score(request):
     return render(request, 'credit_score.html')
+
+def analysis_page(request):
+    return render(request, 'analysis.html')

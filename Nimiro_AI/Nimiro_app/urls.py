@@ -12,7 +12,8 @@ urlpatterns = [
     path('farming_guide/', views.farming_guide, name='farming-guide'),
     path('market_intelligence/', views.market_intelligence, name='market-intelligence'),
     path('profile_page/', views.profile_page, name='profile-page'),
-    path('landmap/', views.landmap, name='landmap'),
+    path('landmap/', views.landmap, name='landmap-page'),
+    path('analysis/', views.analysis_page, name='analysis-page'),
     path('credit_score/', views.credit_score, name='credit-score'),
 
 ]
