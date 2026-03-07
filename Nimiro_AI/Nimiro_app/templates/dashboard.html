@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -272,7 +277,48 @@
                                     </button> -->
                                 </div>
                             </section>
+
                         </div>
+
+                        <!-- Land Mapping Quick View -->
+                        <div class="p-4 pt-0">
+                            <div class="flex justify-between items-center mb-3">
+                                <h3
+                                    class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">
+                                    Your Farmstead
+                                </h3>
+                                <div
+                                    class="flex items-center gap-1 text-[10px] font-bold text-primary bg-primary/10 px-2 py-1 rounded-md">
+                                    <span class="material-icons-round text-[12px]">verified</span> Boundary Verified
+                                </div>
+                            </div>
+                            <div
+                                class="relative w-full h-[28rem] md:h-[32rem] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm group bg-slate-100 dark:bg-slate-900 z-0 text-slate-900">
+
+                                <!-- Leaflet Map Container -->
+                                <div id="dashboardMap" class="w-full h-full z-0"></div>
+
+                                <!-- Lower Left Legend -->
+                                <div
+                                    class="absolute bottom-3 left-3 flex flex-col gap-1.5 z-[1000] pointer-events-none">
+                                    <div
+                                        class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 py-2 rounded-xl text-xs font-bold shadow-lg border border-slate-200/50 dark:border-slate-700/50 flex flex-col">
+                                        <span class="text-slate-800 dark:text-slate-100">Plot A (Maize & Beans)</span>
+                                        <span class="text-[10px] text-slate-500 font-medium">Total: 2.5 Acres</span>
+                                    </div>
+                                </div>
+
+                                <!-- Open Map Button -->
+                                <a href="{% url 'landmap-page' %}"
+                                    class="absolute top-3 right-3 bg-white/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-secondary hover:bg-white p-2 rounded-xl shadow-lg border border-slate-200/50 dark:border-slate-700/50 transition-all backdrop-blur-md z-[1000] group/btn">
+                                    <span
+                                        class="material-icons-round text-sm group-hover/btn:scale-110 transition-transform">open_in_full</span>
+                                </a>
+                            </div>
+                        </div>
+
+
+
                     </div>
 
                     <!-- Right Column (Sidebar on Desktop) -->
@@ -363,78 +409,263 @@
                         </section>
 
                         <!-- Recommended Crops -->
-                        <section class="space-y-4">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-bold text-lg dark:text-white">Recommended Crops</h3>
-                                <a class="text-xs font-semibold text-primary dark:text-secondary hover:underline transition-all"
-                                    href="#">View all</a>
+                        <div class="pt-2">
+                            <div class="flex justify-between items-center px-4 pb-3">
+                                <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Recommended Crops</h3>
+                                <a class="text-primary text-sm font-semibold" href="#">View All</a>
                             </div>
-                            <div class="space-y-3">
+                            <div class="flex overflow-x-auto gap-4 px-4 pb-4 no-scrollbar">
+                                <!-- Crop Card 1 -->
                                 <div
-                                    class="bg-card-light dark:bg-card-dark p-4 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm flex items-center gap-4 hover:border-primary/30 hover:shadow-md transition-all cursor-pointer group">
-                                    <div
-                                        class="w-14 h-14 bg-green-50 dark:bg-green-900/20 flex-shrink-0 rounded-2xl flex items-center justify-center text-green-600 group-hover:scale-110 transition-transform">
-                                        <span class="material-icons-round text-2xl">eco</span>
+                                    class="flex-none w-40 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+                                    <div class="h-28 w-full bg-slate-200 dark:bg-slate-800">
+                                        <img class="w-full h-full object-cover"
+                                            data-alt="Close up of green maize corn plants in field"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBItGHXI_cP5PdGfk4iNw3yT1Lhn7XLtvBxNKRZRDE3GygloO2ltWSDN2iR6eK1G2y5iG8yw5W3-5xFXP9EToZJAyQhC07tHrCUH-IpaGDAwDHj-eNVsqisqnxULAu-vwKVLX6rJjW68Mtox7Oj45wIwtlCHcZ9xtdiWAAao4qHsZedDwPSOmCb73NHDTb6SSsjL7amp6tHgGgqJrmzG5WZR5rY2xCuLM-cHzFhTzkO0NUFaGDJbxz4RIbpSmkTB-L3UOexJ5Ac1eZD" />
                                     </div>
-                                    <div class="flex-1 w-full min-w-0">
-                                        <div class="flex items-start justify-between w-full">
-                                            <div class="truncate pr-2">
-                                                <h4
-                                                    class="font-bold text-slate-800 dark:text-slate-100 truncate md:text-base">
-                                                    Maize</h4>
-                                                <p
-                                                    class="text-[10px] md:text-xs text-slate-500 flex items-center gap-1 mt-0.5 truncate">
-                                                    <span
-                                                        class="material-icons-round text-[12px] flex-shrink-0">calendar_today</span>
-                                                    March - August
-                                                </p>
-                                            </div>
-                                            <span
-                                                class="text-[10px] font-bold text-green-600 px-2 py-1 bg-green-50 dark:bg-green-900/30 rounded-lg flex-shrink-0 whitespace-nowrap">92%
-                                                MATCH</span>
-                                        </div>
-                                        <div class="flex items-center justify-between mt-2.5">
-                                            <p class="text-[10px] md:text-xs text-slate-500 font-medium">Est: <span
-                                                    class="text-slate-800 dark:text-slate-200">4.5 tons/ha</span></p>
-                                            <span
-                                                class="material-icons-round text-slate-300 dark:text-slate-600 text-sm group-hover:text-primary dark:group-hover:text-secondary group-hover:translate-x-1 transition-all">chevron_right</span>
-                                        </div>
+                                    <div class="p-3">
+                                        <p class="text-slate-900 dark:text-slate-100 font-bold">Maize</p>
+                                        <p class="text-primary text-xs font-medium mt-1">98% Match</p>
                                     </div>
                                 </div>
+                                <!-- Crop Card 2 -->
+                                <div
+                                    class="flex-none w-40 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+                                    <div class="h-28 w-full bg-slate-200 dark:bg-slate-800">
+                                        <img class="w-full h-full object-cover"
+                                            data-alt="Healthy green soybean plants growing in rows"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyQo8Z7yNOdeSemGakuQtabZFc0C5cXJnaKOYHUGv2W8-hZcU0xpWLPsVqYKKq9Vre2mhJDTyb0PWeUiG5dBRKBh6vW870IRR1rRDDL0la5cZ6GBvdByIY00L2L3NxQT4F5LizT2m8rdJldDumEid96H-tuXrhciJV4VlflVKmmSgcqSRUSxKThdHN6MseEIRDaMJfBXN67vD0YdLL7U6KOCAJsQjnsSO_PkksQjKgPPjrwEdHeHIU8_czN1aJnN1EyNRyNJJknpwx" />
+                                    </div>
+                                    <div class="p-3">
+                                        <p class="text-slate-900 dark:text-slate-100 font-bold">Soybeans</p>
+                                        <p class="text-primary text-xs font-medium mt-1">85% Match</p>
+                                    </div>
+                                </div>
+                                <!-- Crop Card 3 -->
+                                <div
+                                    class="flex-none w-40 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+                                    <div class="h-28 w-full bg-slate-200 dark:bg-slate-800">
+                                        <img class="w-full h-full object-cover"
+                                            data-alt="Sunlit wheat field ready for harvest"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUL8xwIaDUoxVoP-wTKOsZ-djOiLXRXB4jYmC_d9czuHcI9NBuq6VI8Qnyoe00PAsm_ewxw4VIFuVd2ov_ra4XGWoe7dWsTmkpBjFv2U7ueTi4bhKwFMuJm_y6sM5DsSQsf3Uqyj4v7QZ6kUYnGGyJrOnjKNSM-Y1-EXLxhWCGJWjMirkh8tr9bIu3i4QLwYtJP5gzhZT0ynEto_tnrQ6VRzNrA6XH2pl_vtB3jOOIFgVnD30D2uiJ1mwtXX3US5UTCh1RCHaSteoB" />
+                                    </div>
+                                    <div class="p-3">
+                                        <p class="text-slate-900 dark:text-slate-100 font-bold">Wheat</p>
+                                        <p class="text-orange-500 text-xs font-medium mt-1">72% Match</p>
+                                    </div>
+                                </div>
+                                <!-- Crop Card 4 -->
+                                <div
+                                    class="flex-none w-40 bg-white dark:bg-slate-900 rounded-xl shadow-sm overflow-hidden">
+                                    <div class="h-28 w-full bg-slate-200 dark:bg-slate-800 relative">
+                                        <div class="absolute inset-0 pointer-events-none z-10 mix-blend-multiply">
+                                        </div>
+                                        <img class="w-full h-full object-cover"
+                                            data-alt="Field of sorghum grain ready for harvest"
+                                            src="https://www.ffa.org/wp-content/uploads/2025/01/Sorghum-Landscape-1024x683.jpg" />
+                                    </div>
+                                    <div class="p-3">
+                                        <p class="text-slate-900 dark:text-slate-100 font-bold">Sorghum</p>
+                                        <p class="text-red-500 text-xs font-medium mt-1">58% Match</p>
+                                    </div>
+                                </div>
+                                <!-- Crop Card 5 -->
+                                <div
+                                    class="flex-none w-40 bg-white dark:bg-slate-900 rounded-xl shadow-sm overflow-hidden">
+                                    <div class="h-28 w-full bg-slate-200 dark:bg-slate-800 relative">
+                                        <div class="absolute inset-0 pointer-events-none z-10 mix-blend-multiply">
+                                        </div>
+                                        <img class="w-full h-full object-cover"
+                                            data-alt="Cotton plant close up in field"
+                                            src="https://barnhardt.net/wp-content/uploads/2016/04/cotton-production-and-the-story-of-cotton-scaled.jpg" />
+                                    </div>
+                                    <div class="p-3">
+                                        <p class="text-slate-900 dark:text-slate-100 font-bold">Cotton</p>
+                                        <p class="text-red-600 text-xs font-medium mt-1">35% Match</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                <div
-                                    class="bg-card-light dark:bg-card-dark p-4 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm flex items-center gap-4 hover:border-emerald-500/30 hover:shadow-md transition-all cursor-pointer group">
-                                    <div
-                                        class="w-14 h-14 bg-emerald-50 dark:bg-emerald-900/20 flex-shrink-0 rounded-2xl flex items-center justify-center text-emerald-600 group-hover:scale-110 transition-transform">
-                                        <span class="material-icons-round text-2xl">spa</span>
+
+                        <!-- Farming Guide -->
+
+                        <div class="relative overflow-hidden rounded-3xl bg-primary text-white p-6 mb-8 shadow-xl">
+                            <div class="relative z-10">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span
+                                        class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium">Cereals</span>
+                                    <span
+                                        class="bg-accent/90 text-primary px-3 py-1 rounded-full text-xs font-bold">Recommended</span>
+                                </div>
+                                <h2 class="text-3xl font-bold mb-1">Maize</h2>
+                                <p class="text-white/80 text-sm mb-4">Zea mays L.</p>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white/10 p-3 rounded-2xl backdrop-blur-sm">
+                                        <p class="text-xs text-white/60 mb-1">Optimal pH</p>
+                                        <p class="text-lg font-semibold">5.8 – 7.0</p>
                                     </div>
-                                    <div class="flex-1 w-full min-w-0">
-                                        <div class="flex justify-between items-start">
-                                            <div class="truncate pr-2">
-                                                <h4
-                                                    class="font-bold text-slate-800 dark:text-slate-100 md:text-base truncate">
-                                                    Beans</h4>
-                                                <p
-                                                    class="text-[10px] md:text-xs text-slate-500 flex items-center gap-1 mt-0.5 truncate">
-                                                    <span
-                                                        class="material-icons-round text-[12px] flex-shrink-0">calendar_today</span>
-                                                    March - June
-                                                </p>
-                                            </div>
-                                            <span
-                                                class="text-[10px] font-bold text-emerald-600 px-2 py-1 bg-emerald-50 dark:bg-emerald-900/30 rounded-lg flex-shrink-0 whitespace-nowrap">87%
-                                                MATCH</span>
-                                        </div>
-                                        <div class="flex items-center justify-between mt-2.5">
-                                            <p class="text-[10px] md:text-xs text-slate-500 font-medium">Est: <span
-                                                    class="text-slate-800 dark:text-slate-200">1.2 tons/ha</span></p>
-                                            <span
-                                                class="material-icons-round text-slate-300 dark:text-slate-600 text-sm group-hover:text-emerald-500 group-hover:translate-x-1 transition-all">chevron_right</span>
-                                        </div>
+                                    <div class="bg-white/10 p-3 rounded-2xl backdrop-blur-sm">
+                                        <p class="text-xs text-white/60 mb-1">Duration</p>
+                                        <p class="text-lg font-semibold">120 - 150 Days</p>
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                            <div class="absolute -right-8 -bottom-6 opacity-20 w-48 h-48">
+                                <span class="material-icons-round text-[180px]">eco</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-bold">Farming Cycle</h3>
+                            <span class="text-sm font-medium text-primary dark:text-secondary flex items-center">
+                                40% Complete <span class="material-icons-round text-sm ml-1">trending_up</span>
+                            </span>
+                        </div>
+                        <div class="space-y-0" style="overflow-y: scroll; height: 200px;">
+                            <div class="step-container relative flex gap-4 pb-8">
+                                <div class="timeline-line"></div>
+                                <div
+                                    class="relative z-10 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg ring-4 ring-white dark:ring-background-dark">
+                                    <span class="material-icons-round text-xl">check</span>
+                                </div>
+                                <div
+                                    class="flex-1 bg-white dark:bg-zinc-900 p-4 rounded-2xl border border-slate-100 dark:border-zinc-800 shadow-sm">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-bold text-primary dark:text-secondary">Land Preparation</h4>
+                                        <span
+                                            class="text-[10px] font-bold uppercase tracking-wider bg-slate-100 dark:bg-zinc-800 px-2 py-0.5 rounded text-slate-500">March
+                                            01</span>
+                                    </div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+                                        Clear all weeds and previous crop residues. Ensure deep ploughing for root
+                                        penetration.
+                                    </p>
+                                    <div class="flex items-center gap-2">
+                                        <input checked=""
+                                            class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary"
+                                            type="checkbox" />
+                                        <span
+                                            class="text-xs font-semibold text-primary dark:text-secondary">Completed</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-container relative flex gap-4 pb-8">
+                                <div class="timeline-line"></div>
+                                <div
+                                    class="relative z-10 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg ring-4 ring-white dark:ring-background-dark">
+                                    <span class="material-icons-round text-xl">check</span>
+                                </div>
+                                <div
+                                    class="flex-1 bg-white dark:bg-zinc-900 p-4 rounded-2xl border border-slate-100 dark:border-zinc-800 shadow-sm">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-bold text-primary dark:text-secondary">Ploughing &amp;
+                                            Harrowing</h4>
+                                        <span
+                                            class="text-[10px] font-bold uppercase tracking-wider bg-slate-100 dark:bg-zinc-800 px-2 py-0.5 rounded text-slate-500">March
+                                            15</span>
+                                    </div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+                                        Till the soil to a fine tilth. Incorporate organic manure at this stage for
+                                        better nutrient absorption.
+                                    </p>
+                                    <div class="flex items-center gap-2">
+                                        <input checked=""
+                                            class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary"
+                                            type="checkbox" />
+                                        <span
+                                            class="text-xs font-semibold text-primary dark:text-secondary">Completed</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-container relative flex gap-4 pb-8">
+                                <div class="timeline-line"></div>
+                                <div
+                                    class="relative z-10 w-10 h-10 rounded-full bg-accent flex items-center justify-center text-primary shadow-lg ring-4 ring-white dark:ring-background-dark animate-pulse">
+                                    <span class="material-icons-round text-xl">seeding</span>
+                                </div>
+                                <div
+                                    class="flex-1 bg-white dark:bg-zinc-900 p-4 rounded-2xl border-2 border-accent shadow-md">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-bold text-slate-900 dark:text-white">Sowing</h4>
+                                        <span
+                                            class="text-[10px] font-bold uppercase tracking-wider bg-accent/20 px-2 py-0.5 rounded text-accent-700">In
+                                            Progress</span>
+                                    </div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+                                        Plant seeds 2-3cm deep with 75cm spacing between rows. Best time is after
+                                        the first rains.
+                                    </p>
+                                    <div class="flex items-center gap-2">
+                                        <input
+                                            class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary bg-transparent"
+                                            type="checkbox" />
+                                        <span class="text-xs font-semibold text-slate-500">Mark as Done</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-container relative flex gap-4 pb-8">
+                                <div class="timeline-line"></div>
+                                <div
+                                    class="relative z-10 w-10 h-10 rounded-full bg-slate-200 dark:bg-zinc-800 flex items-center justify-center text-slate-400 shadow-sm ring-4 ring-white dark:ring-background-dark">
+                                    <span class="material-icons-round text-xl">water_drop</span>
+                                </div>
+                                <div
+                                    class="flex-1 bg-white/50 dark:bg-zinc-900/50 p-4 rounded-2xl border border-slate-100 dark:border-zinc-800">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-bold text-slate-400">Irrigation &amp; Fertilizing</h4>
+                                        <span
+                                            class="text-[10px] font-bold uppercase tracking-wider bg-slate-50 dark:bg-zinc-800/50 px-2 py-0.5 rounded text-slate-400 text-slate-400">May
+                                            - June</span>
+                                    </div>
+                                    <p class="text-sm text-slate-400 dark:text-slate-500 mb-3 leading-relaxed">
+                                        Top dress with Nitrogen fertilizer 4-6 weeks after emergence. Maintain moist
+                                        soil.
+                                    </p>
+                                    <div class="flex items-center gap-2 opacity-50">
+                                        <input class="w-5 h-5 rounded border-slate-300 text-primary" disabled=""
+                                            type="checkbox" />
+                                        <span class="text-xs font-semibold">Scheduled</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-container relative flex gap-4 pb-8">
+                                <div class="timeline-line"></div>
+                                <div
+                                    class="relative z-10 w-10 h-10 rounded-full bg-slate-200 dark:bg-zinc-800 flex items-center justify-center text-slate-400 shadow-sm ring-4 ring-white dark:ring-background-dark">
+                                    <span class="material-icons-round text-xl">agriculture</span>
+                                </div>
+                                <div
+                                    class="flex-1 bg-white/50 dark:bg-zinc-900/50 p-4 rounded-2xl border border-slate-100 dark:border-zinc-800">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-bold text-slate-400">Harvesting</h4>
+                                        <span
+                                            class="text-[10px] font-bold uppercase tracking-wider bg-slate-50 dark:bg-zinc-800/50 px-2 py-0.5 rounded text-slate-400">August</span>
+                                    </div>
+                                    <p class="text-sm text-slate-400 dark:text-slate-500 mb-3 leading-relaxed">
+                                        Harvest when the grains are hard and husks turn brown/dry. Store in cool,
+                                        dry conditions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="mt-4 p-5 rounded-3xl bg-secondary/20 dark:bg-primary/20 border border-secondary/30 dark:border-primary/30">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                                    <span class="material-icons-round">lightbulb</span>
+                                </div>
+                                <h4 class="font-bold">Expert Tip</h4>
+                            </div>
+                            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                                Intercropping maize with legumes like beans or cowpeas can help fix nitrogen in the
+                                soil, reducing your fertilizer costs for the next season.
+                            </p>
+                        </div>
+
+
+
+
                     </div>
 
                 </div>
@@ -447,6 +678,86 @@
 
         </div>
     </div>
+
+    <!-- Leaflet Configuration Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var mapContainer = document.getElementById('dashboardMap');
+            if (mapContainer) {
+                // Initialize map with zoomControl hidden initially, then placed bottom-right
+                var farmMap = L.map('dashboardMap', {
+                    zoomControl: false,
+                    scrollWheelZoom: false // prevents accidental scroll capture on the dashboard
+                }).setView([-0.3031, 36.0800], 16);
+
+                L.control.zoom({
+                    position: 'bottomright'
+                }).addTo(farmMap);
+
+                // Load Esri World Imagery Tile Layer
+                var esriTiles = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+                    maxZoom: 19
+                }).addTo(farmMap);
+
+                // Add interactive Plot Boundaries (Polygon)
+                var farmBounds = [
+                    [-0.3015, 36.0785],
+                    [-0.3018, 36.0820],
+                    [-0.3045, 36.0815],
+                    [-0.3040, 36.0780]
+                ];
+
+                var plotPolygon = L.polygon(farmBounds, {
+                    color: '#49ec13',
+                    weight: 2,
+                    opacity: 0.9,
+                    fillColor: '#2D4F35',
+                    fillOpacity: 0.35,
+                    dashArray: '6, 6'
+                }).addTo(farmMap);
+
+                farmMap.fitBounds(plotPolygon.getBounds(), { padding: [20, 20] });
+
+                // Add Soil Moisture Sensor Interactive Marker
+                var sensorMarker = L.circleMarker([-0.3035, 36.0795], {
+                    radius: 7,
+                    fillColor: '#3b82f6',
+                    color: '#ffffff',
+                    weight: 2,
+                    opacity: 1,
+                    fillOpacity: 1
+                }).addTo(farmMap);
+
+                sensorMarker.bindPopup(`
+                    <div class="text-center font-display" style="font-family: 'Inter', sans-serif;">
+                        <b class="text-slate-500 text-[10px] uppercase block mb-0.5">Soil Moisture Node</b>
+                        <span class="text-blue-600 font-bold text-sm">Active &middot; 42%</span>
+                    </div>
+                `);
+
+                // Add Crop Data Interactive Marker
+                var cropMarker = L.circleMarker([-0.3025, 36.0805], {
+                    radius: 7,
+                    fillColor: '#2D4F35',
+                    color: '#ffffff',
+                    weight: 2,
+                    opacity: 1,
+                    fillOpacity: 1
+                }).addTo(farmMap);
+
+                cropMarker.bindPopup(`
+                    <div class="text-center font-display" style="font-family: 'Inter', sans-serif;">
+                        <b class="text-slate-800 text-sm block mb-0.5">Maize</b>
+                        <span class="text-slate-500 font-bold text-[11px]">Var: Pioneer 210 &middot; 1.2 Acres</span>
+                    </div>
+                `);
+
+                // Open popups by default if you want them visible immediately, but usually hover/click is better
+                // sensorMarker.openPopup();
+            }
+        });
+    </script>
 </body>
 
 </html>
