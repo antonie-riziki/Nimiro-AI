@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Crop Calendar - Nimiro AI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2D4B37",
+                        secondary: "#89A74E",
+                        accent: "#F4B140",
+                        "card-dark": "#1A261E",
+                        "background-dark": "#0F1A13",
+                    },
+                    fontFamily: {
+                        sans: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px border rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#F8F9F8] dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Desktop Sidebar -->
+        {% include 'sidebar.html' %}
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden relative">
+            <!-- Header -->
+            <header
+                class="flex items-center justify-between px-6 py-4 bg-white/80 dark:bg-card-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 sticky top-0 z-30">
+                <div class="flex items-center gap-4">
+                    <a href="{% url 'dashboard-page' %}"
+                        class="md:hidden flex items-center justify-center size-10 rounded-full bg-slate-100 dark:bg-slate-800">
+                        <span class="material-icons-round">arrow_back</span>
+                    </a>
+                    <div>
+                        <h1 class="text-xl font-extrabold tracking-tight">Crop Calendar</h1>
+                        <p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Seasonal Planning &
+                            Timelines</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button class="size-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                        <span class="material-icons-round">today</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 pb-24">
+                <!-- Month Selector -->
+                <div
+                    class="flex items-center justify-between bg-white dark:bg-card-dark p-4 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800">
+                    <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">
+                        <span class="material-icons-round">chevron_left</span>
+                    </button>
+                    <div class="text-center">
+                        <h2 class="text-lg font-black uppercase tracking-tight">September 2024</h2>
+                        <p class="text-[10px] font-bold text-primary dark:text-secondary uppercase tracking-widest">Late
+                            Season Planting</p>
+                    </div>
+                    <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">
+                        <span class="material-icons-round">chevron_right</span>
+                    </button>
+                </div>
+
+                <!-- Calendar View -->
+                <div
+                    class="bg-white dark:bg-card-dark rounded-[32px] overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800">
+                    <div
+                        class="calendar-grid bg-slate-50 dark:bg-slate-800/30 border-b border-slate-100 dark:border-slate-800">
+                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Sun</div>
+                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Mon</div>
+                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Tue</div>
+                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Wed</div>
+                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Thu</div>
+                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Fri</div>
+                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Sat</div>
+                    </div>
+                    <div class="calendar-grid">
+                        <!-- Example empty days -->
+                        <div
+                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
+                            25</div>
+                        <div
+                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
+                            26</div>
+                        <div
+                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
+                            27</div>
+                        <div
+                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
+                            28</div>
+                        <div
+                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
+                            29</div>
+                        <div
+                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
+                            30</div>
+                        <div
+                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
+                            31</div>
+
+                        <!-- Month Starts -->
+                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
+                            <span class="text-xs font-bold text-slate-400">1</span>
+                        </div>
+                        <div
+                            class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800 bg-secondary/10 relative">
+                            <span class="text-xs font-bold text-primary">2</span>
+                            <div class="absolute inset-x-1 bottom-2 h-1 bg-secondary rounded-full"></div>
+                        </div>
+                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
+                            <span class="text-xs font-bold text-slate-400">3</span>
+                        </div>
+                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
+                            <span class="text-xs font-bold text-slate-400">4</span>
+                        </div>
+                        <div
+                            class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800 bg-accent/10 relative">
+                            <span class="text-xs font-bold text-accent">5</span>
+                            <div
+                                class="absolute inset-x-1 bottom-2 bg-accent/40 px-1 py-0.5 rounded text-[8px] font-black text-accent truncate">
+                                HARVESTING</div>
+                        </div>
+                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
+                            <span class="text-xs font-bold text-slate-400">6</span>
+                        </div>
+                        <div class="h-24 md:h-32 p-1 md:p-2 border-b border-slate-100 dark:border-slate-800">
+                            <span class="text-xs font-bold text-slate-400">7</span>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
+                            <span class="text-xs font-bold text-slate-400">8</span>
+                        </div>
+                        <div
+                            class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800 bg-primary/20 ring-2 ring-primary ring-inset z-10">
+                            <span class="text-xs font-black text-primary">9</span>
+                            <div
+                                class="mt-1 bg-primary text-white text-[8px] font-black px-1 py-0.5 rounded leading-none">
+                                TODAY</div>
+                        </div>
+                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
+                            <span class="text-xs font-bold text-slate-400">10</span>
+                        </div>
+                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
+                            <span class="text-xs font-bold text-slate-400">11</span>
+                        </div>
+                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
+                            <span class="text-xs font-bold text-slate-400">12</span>
+                        </div>
+                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
+                            <span class="text-xs font-bold text-slate-400">13</span>
+                        </div>
+                        <div class="h-24 md:h-32 p-1 md:p-2 border-b border-slate-100 dark:border-slate-800">
+                            <span class="text-xs font-bold text-slate-400">14</span>
+                        </div>
+                        <!-- ... rest of days ... -->
+                        <div
+                            class="col-span-12 py-4 text-center text-[10px] text-slate-400 uppercase tracking-widest font-bold">
+                            Additional weeks hidden in preview</div>
+                    </div>
+                </div>
+
+                <!-- Crop Specific Timelines -->
+                <div class="space-y-4">
+                    <h3 class="text-sm font-black uppercase tracking-widest text-slate-500">Active Crop Timelines</h3>
+
+                    <!-- Maize Timeline -->
+                    <div
+                        class="bg-white dark:bg-card-dark p-5 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="size-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                                    <span class="material-icons-round">agriculture</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Hybrid Maize (Plot A-1)</h4>
+                                    <p class="text-[10px] text-slate-500 font-bold uppercase">Growth Phase: Silking</p>
+                                </div>
+                            </div>
+                            <span
+                                class="px-3 py-1 bg-green-100 text-green-700 dark:bg-green-500/10 dark:text-green-400 text-[10px] font-black rounded-full">ON
+                                TRACK</span>
+                        </div>
+
+                        <div class="relative h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden mb-6">
+                            <div class="absolute top-0 left-0 h-full bg-primary rounded-full" style="width: 65%"></div>
+                        </div>
+
+                        <div class="grid grid-cols-4 gap-4">
+                            <div class="text-center">
+                                <p class="text-[8px] font-black text-slate-400 uppercase">Planting</p>
+                                <p class="text-[10px] font-bold">May 12</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-[8px] font-black text-slate-400 uppercase">Fertilizer</p>
+                                <p class="text-[10px] font-bold">Jun 25</p>
+                            </div>
+                            <div class="text-center text-primary">
+                                <p class="text-[8px] font-black uppercase">Flowering</p>
+                                <p class="text-[10px] font-extrabold">Aug 30</p>
+                            </div>
+                            <div class="text-center opacity-40">
+                                <p class="text-[8px] font-black uppercase">Harvest</p>
+                                <p class="text-[10px] font-bold">Oct 15</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smart Seasonal Tips -->
+                <div class="bg-primary p-6 rounded-[32px] text-white overflow-hidden relative group">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="material-icons-round text-accent">lightbulb</span>
+                            <h3 class="font-bold text-sm uppercase tracking-widest text-secondary">Expert Tip for
+                                September</h3>
+                        </div>
+                        <p class="text-sm font-medium leading-relaxed mb-4">Expect localized showers next week. Ideal
+                            time for top-dressing wheat and preparing storage facilities for the upcoming harvest.</p>
+                        <button
+                            class="bg-secondary text-primary px-5 py-2 rounded-xl text-xs font-black uppercase tracking-tight hover:scale-105 transition-transform">Get
+                            Detailed Plan</button>
+                    </div>
+                    <!-- Decorative background icon -->
+                    <span
+                        class="material-icons-round absolute -bottom-4 -right-4 text-9xl opacity-10 group-hover:scale-110 transition-transform">eco</span>
+                </div>
+            </main>
+
+            <!-- Bottom Nav -->
+            {% include 'bottom_nav.html' %}
+        </div>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+        }
+
+        // Initialize UI transitions
+        document.addEventListener('DOMContentLoaded', () => {
+            const main = document.querySelector('main');
+            main.style.opacity = '0';
+            main.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => main.style.opacity = '1', 10);
+        });
+    </script>
+</body>
+
+</html>

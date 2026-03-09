@@ -222,34 +222,18 @@
                                 <!-- Wrapper to enable horizontal scrolling on mobile, grid on desktop -->
                                 <div
                                     class="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible no-scrollbar pb-2 md:pb-0 -mx-5 px-5 md:mx-0 md:px-0">
-                                    <button class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 sm:w-auto">
+                                    <a href="{% url 'crop-calendar' %}"
+                                        class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 sm:w-auto">
                                         <div
-                                            class="w-14 h-14 md:w-full md:aspect-square rounded-2xl bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-105 group-active:scale-95 transition-all">
+                                            class="w-14 h-14 md:w-full md:aspect-square rounded-2xl bg-[#895129] text-white flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-105 group-active:scale-95 transition-all">
                                             <span class="material-icons-round">calendar_today</span>
                                         </div>
                                         <span
                                             class="text-[10px] md:text-[11px] font-semibold text-slate-600 dark:text-slate-400">Crop
                                             Calendar</span>
-                                    </button>
-                                    <button class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 md:w-auto">
-                                        <div
-                                            class="w-14 h-14 md:w-full md:aspect-square rounded-2xl bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-105 group-active:scale-95 transition-all">
-                                            <span class="material-icons-round">map</span>
-                                        </div>
-                                        <span
-                                            class="text-[10px] md:text-[11px] font-semibold text-slate-600 dark:text-slate-400">Land
-                                            Map</span>
-                                    </button>
-                                    <button class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 md:w-auto">
-                                        <div
-                                            class="w-14 h-14 md:w-full md:aspect-square rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg shadow-accent/20 group-hover:scale-105 group-active:scale-95 transition-all">
-                                            <span class="material-icons-round">trending_up</span>
-                                        </div>
-                                        <span
-                                            class="text-[10px] md:text-[11px] font-semibold text-slate-600 dark:text-slate-400">Market
-                                            Intelligence</span>
-                                    </button>
-                                    <button class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 md:w-auto">
+                                    </a>
+                                    <a href="{% url 'analysis-page' %}"
+                                        class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 md:w-auto">
                                         <div
                                             class="w-14 h-14 md:w-full md:aspect-square rounded-2xl bg-secondary text-white flex items-center justify-center shadow-lg shadow-secondary/20 group-hover:scale-105 group-active:scale-95 transition-all">
                                             <span class="material-icons-round">science</span>
@@ -257,17 +241,9 @@
                                         <span
                                             class="text-[10px] md:text-[11px] font-semibold text-slate-600 dark:text-slate-400">Soil
                                             analysis</span>
-                                    </button>
-                                    <!-- Hide trailing actions on grid desktop optionally if too crowded, or show up to 6 in two rows -->
-                                    <button class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 md:w-auto">
-                                        <div
-                                            class="w-14 h-14 md:w-full md:aspect-square rounded-2xl bg-blue-500 text-white flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 group-active:scale-95 transition-all">
-                                            <span class="material-icons-round">credit_score</span>
-                                        </div>
-                                        <span
-                                            class="text-[10px] md:text-[11px] font-semibold text-slate-600 dark:text-slate-400">Credit</span>
-                                    </button>
-                                    <button class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 md:w-auto">
+                                    </a>
+                                    <a href="{% url 'farming-guide' %}"
+                                        class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 md:w-auto">
                                         <div
                                             class="w-14 h-14 md:w-full md:aspect-square rounded-2xl bg-slate-800 text-white flex items-center justify-center shadow-lg shadow-slate-800/20 group-hover:scale-105 group-active:scale-95 transition-all">
                                             <span class="material-icons-round">menu_book</span>
@@ -275,7 +251,40 @@
                                         <span
                                             class="text-[10px] md:text-[11px] font-semibold text-slate-600 dark:text-slate-400">Farming
                                             guide</span>
-                                    </button>
+                                    </a>
+                                    <a href="{% url 'landmap-page' %}"
+                                        class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 md:w-auto">
+                                        <div
+                                            class="w-14 h-14 md:w-full md:aspect-square rounded-2xl bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-105 group-active:scale-95 transition-all">
+                                            <span class="material-icons-round">map</span>
+                                        </div>
+                                        <span
+                                            class="text-[10px] md:text-[11px] font-semibold text-slate-600 dark:text-slate-400">Land
+                                            Mapping</span>
+                                    </a>
+                                    <a href="{% url 'market-intelligence' %}"
+                                        class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 md:w-auto">
+                                        <div
+                                            class="w-14 h-14 md:w-full md:aspect-square rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg shadow-accent/20 group-hover:scale-105 group-active:scale-95 transition-all">
+                                            <span class="material-icons-round">trending_up</span>
+                                        </div>
+                                        <span
+                                            class="text-[10px] md:text-[11px] font-semibold text-slate-600 dark:text-slate-400">Market
+                                            Intelligence</span>
+                                    </a>
+
+                                    <!-- Hide trailing actions on grid desktop optionally if too crowded, or show up to 6 in two rows -->
+                                    <a href="{% url 'credit-score' %}"
+                                        class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 md:w-auto">
+                                        <div
+                                            class="w-14 h-14 md:w-full md:aspect-square rounded-2xl bg-blue-500 text-white flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 group-active:scale-95 transition-all">
+                                            <span class="material-icons-round">credit_score</span>
+                                        </div>
+                                        <span
+                                            class="text-[10px] md:text-[11px] font-semibold text-slate-600 dark:text-slate-400">Credit
+                                            score</span>
+                                    </a>
+
                                     <!-- Fake 'Add' button for grid placeholder on Desktop -->
                                     <!-- <button
                                         class="hidden md:flex flex-shrink-0 flex-col items-center gap-2 group w-full">

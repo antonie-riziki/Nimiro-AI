@@ -27,3 +27,6 @@ def credit_score(request):
 
 def analysis_page(request):
     return render(request, 'analysis.html')
+
+def crop_calendar(request):
+    return render(request, 'crop_calendar.html')

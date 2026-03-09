@@ -15,6 +15,7 @@ urlpatterns = [
     path('landmap/', views.landmap, name='landmap-page'),
     path('analysis/', views.analysis_page, name='analysis-page'),
     path('credit_score/', views.credit_score, name='credit-score'),
+    path('crop_calendar/', views.crop_calendar, name='crop-calendar'),
 
 ]
 
