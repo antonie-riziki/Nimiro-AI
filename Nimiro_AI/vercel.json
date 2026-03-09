@@ -1,13 +1,35 @@
 {
-    "builds": [{
+  "version": 2,
+  "builds": [
+    {
       "src": "Nimiro_AI/wsgi.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.12" }
-    }],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "Nimiro_AI/wsgi.py"
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.12"
       }
-    ]
+    },
+    {
+      "src": "ussd_app/ussd.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.12"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/ussd",
+      "dest": "ussd_app/ussd.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "Nimiro_AI/wsgi.py"
+    }
+  ]
 }

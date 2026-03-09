@@ -5,7 +5,7 @@ import sys
 
 from dotenv import load_dotenv
 
-sys.path.insert(1, '/')
+# sys.path.insert(1, '/')
 
 from send_sms import chunk_message
 from ai_response import nutrients_metrics_func, crop_recommendations_func, future_forecast_func, market_projection_func
