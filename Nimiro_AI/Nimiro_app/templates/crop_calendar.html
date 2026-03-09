@@ -82,192 +82,282 @@
             </header>
 
             <main class="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 pb-24">
-                <!-- Month Selector -->
+                <!-- Maize Farming Guide Selection -->
                 <div
-                    class="flex items-center justify-between bg-white dark:bg-card-dark p-4 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800">
-                    <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">
-                        <span class="material-icons-round">chevron_left</span>
-                    </button>
-                    <div class="text-center">
-                        <h2 class="text-lg font-black uppercase tracking-tight">September 2024</h2>
-                        <p class="text-[10px] font-bold text-primary dark:text-secondary uppercase tracking-widest">Late
-                            Season Planting</p>
+                    class="bg-white dark:bg-card-dark p-6 rounded-[32px] shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+
+                    <div class="size-42 rounded-3xl overflow-hidden border-2 border-primary/20 shadow-inner">
+                        <img src="https://africasustainabilitymatters.com/wp-content/uploads/2019/05/maize-farm.jpg"
+                            alt="Maize" class="w-full h-full object-cover">
                     </div>
-                    <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">
-                        <span class="material-icons-round">chevron_right</span>
-                    </button>
-                </div>
+                    <div class="flex items-center gap-4">
 
-                <!-- Calendar View -->
-                <div
-                    class="bg-white dark:bg-card-dark rounded-[32px] overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800">
-                    <div
-                        class="calendar-grid bg-slate-50 dark:bg-slate-800/30 border-b border-slate-100 dark:border-slate-800">
-                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Sun</div>
-                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Mon</div>
-                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Tue</div>
-                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Wed</div>
-                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Thu</div>
-                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Fri</div>
-                        <div class="py-3 text-center text-[10px] font-black uppercase text-slate-400">Sat</div>
+                        <div>
+                            <h2 class="text-2xl font-black tracking-tight text-slate-900 dark:text-white">Maize Growth
+                                Lifecycle</h2>
+                            <p
+                                class="text-xs font-bold text-primary dark:text-secondary uppercase tracking-widest text-slate-500">
+                                AI-powered crop suggestions based on your soil analysis</p>
+                        </div>
                     </div>
-                    <div class="calendar-grid">
-                        <!-- Example empty days -->
-                        <div
-                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
-                            25</div>
-                        <div
-                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
-                            26</div>
-                        <div
-                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
-                            27</div>
-                        <div
-                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
-                            28</div>
-                        <div
-                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
-                            29</div>
-                        <div
-                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
-                            30</div>
-                        <div
-                            class="h-24 md:h-32 p-2 border-r border-b border-slate-100 dark:border-slate-800 opacity-20">
-                            31</div>
-
-                        <!-- Month Starts -->
-                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
-                            <span class="text-xs font-bold text-slate-400">1</span>
-                        </div>
-                        <div
-                            class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800 bg-secondary/10 relative">
-                            <span class="text-xs font-bold text-primary">2</span>
-                            <div class="absolute inset-x-1 bottom-2 h-1 bg-secondary rounded-full"></div>
-                        </div>
-                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
-                            <span class="text-xs font-bold text-slate-400">3</span>
-                        </div>
-                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
-                            <span class="text-xs font-bold text-slate-400">4</span>
-                        </div>
-                        <div
-                            class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800 bg-accent/10 relative">
-                            <span class="text-xs font-bold text-accent">5</span>
-                            <div
-                                class="absolute inset-x-1 bottom-2 bg-accent/40 px-1 py-0.5 rounded text-[8px] font-black text-accent truncate">
-                                HARVESTING</div>
-                        </div>
-                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
-                            <span class="text-xs font-bold text-slate-400">6</span>
-                        </div>
-                        <div class="h-24 md:h-32 p-1 md:p-2 border-b border-slate-100 dark:border-slate-800">
-                            <span class="text-xs font-bold text-slate-400">7</span>
-                        </div>
-
-                        <!-- Row 2 -->
-                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
-                            <span class="text-xs font-bold text-slate-400">8</span>
-                        </div>
-                        <div
-                            class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800 bg-primary/20 ring-2 ring-primary ring-inset z-10">
-                            <span class="text-xs font-black text-primary">9</span>
-                            <div
-                                class="mt-1 bg-primary text-white text-[8px] font-black px-1 py-0.5 rounded leading-none">
-                                TODAY</div>
-                        </div>
-                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
-                            <span class="text-xs font-bold text-slate-400">10</span>
-                        </div>
-                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
-                            <span class="text-xs font-bold text-slate-400">11</span>
-                        </div>
-                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
-                            <span class="text-xs font-bold text-slate-400">12</span>
-                        </div>
-                        <div class="h-24 md:h-32 p-1 md:p-2 border-r border-b border-slate-100 dark:border-slate-800">
-                            <span class="text-xs font-bold text-slate-400">13</span>
-                        </div>
-                        <div class="h-24 md:h-32 p-1 md:p-2 border-b border-slate-100 dark:border-slate-800">
-                            <span class="text-xs font-bold text-slate-400">14</span>
-                        </div>
-                        <!-- ... rest of days ... -->
-                        <div
-                            class="col-span-12 py-4 text-center text-[10px] text-slate-400 uppercase tracking-widest font-bold">
-                            Additional weeks hidden in preview</div>
+                    <div class="flex items-center gap-2 bg-slate-50 dark:bg-slate-800/50 p-2 rounded-2xl">
+                        <span
+                            class="px-4 py-2 bg-primary text-white text-[10px] font-black rounded-xl uppercase tracking-widest">Active
+                            Phase: Sowing</span>
                     </div>
                 </div>
 
-                <!-- Crop Specific Timelines -->
-                <div class="space-y-4">
-                    <h3 class="text-sm font-black uppercase tracking-widest text-slate-500">Active Crop Timelines</h3>
+                <!-- Step-by-Step Cycle -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                    <!-- Maize Timeline -->
+                    <!-- 1. Land Preparation -->
                     <div
-                        class="bg-white dark:bg-card-dark p-5 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800">
+                        class="bg-white dark:bg-card-dark p-6 rounded-[32px] shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
                         <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="size-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
-                                    <span class="material-icons-round">agriculture</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold">Hybrid Maize (Plot A-1)</h4>
-                                    <p class="text-[10px] text-slate-500 font-bold uppercase">Growth Phase: Silking</p>
-                                </div>
+                            <div
+                                class="size-12 rounded-2xl bg-orange-100 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400 flex items-center justify-center">
+                                <span class="material-icons-round">landscape</span>
                             </div>
-                            <span
-                                class="px-3 py-1 bg-green-100 text-green-700 dark:bg-green-500/10 dark:text-green-400 text-[10px] font-black rounded-full">ON
-                                TRACK</span>
+                            <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Step 01</span>
                         </div>
-
-                        <div class="relative h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden mb-6">
-                            <div class="absolute top-0 left-0 h-full bg-primary rounded-full" style="width: 65%"></div>
-                        </div>
-
-                        <div class="grid grid-cols-4 gap-4">
-                            <div class="text-center">
-                                <p class="text-[8px] font-black text-slate-400 uppercase">Planting</p>
-                                <p class="text-[10px] font-bold">May 12</p>
-                            </div>
-                            <div class="text-center">
-                                <p class="text-[8px] font-black text-slate-400 uppercase">Fertilizer</p>
-                                <p class="text-[10px] font-bold">Jun 25</p>
-                            </div>
-                            <div class="text-center text-primary">
-                                <p class="text-[8px] font-black uppercase">Flowering</p>
-                                <p class="text-[10px] font-extrabold">Aug 30</p>
-                            </div>
-                            <div class="text-center opacity-40">
-                                <p class="text-[8px] font-black uppercase">Harvest</p>
-                                <p class="text-[10px] font-bold">Oct 15</p>
-                            </div>
+                        <h4 class="font-bold text-lg mb-2">Land Preparation</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Clear existing
+                            vegetation and remains of previous crops. Ensure the land is level for uniform water
+                            distribution.</p>
+                        <div class="pt-4 border-t border-slate-50 dark:border-slate-800/50 flex items-center gap-2">
+                            <span class="size-2 rounded-full bg-orange-500"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-tight text-slate-400">Recommended:
+                                Early Feb</span>
                         </div>
                     </div>
+
+                    <!-- 2. Ploughing -->
+                    <div
+                        class="bg-white dark:bg-card-dark p-6 rounded-[32px] shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="size-12 rounded-2xl bg-amber-100 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                                <span class="material-icons-round">precision_manufacturing</span>
+                            </div>
+                            <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Step 02</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Ploughing</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Break the soil to a
+                            depth of 20-30cm. This improves aeration and drainage while making it easier for roots to
+                            penetrate.</p>
+                        <div class="pt-4 border-t border-slate-50 dark:border-slate-800/50 flex items-center gap-2">
+                            <span class="size-2 rounded-full bg-amber-500"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-tight text-slate-400">Best practice:
+                                Mid Feb</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Sowing -->
+                    <div
+                        class="bg-primary/5 dark:bg-primary/10 p-6 rounded-[32px] shadow-sm border-2 border-primary/20 dark:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all group relative">
+                        <div
+                            class="absolute -top-3 right-8 px-4 py-1 bg-primary text-white text-[8px] font-black rounded-full uppercase tracking-widest shadow-lg">
+                            Current Phase</div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="size-12 rounded-2xl bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/20">
+                                <span class="material-icons-round">grain</span>
+                            </div>
+                            <span class="text-[10px] font-black text-primary uppercase tracking-widest">Step 03</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Sowing</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">Plant certified seeds
+                            at 2.5cm depth. Space rows 75cm apart and 25cm between hills for optimal yield.</p>
+                        <div class="pt-4 border-t border-primary/10 flex items-center gap-2">
+                            <span class="size-2 rounded-full bg-primary animate-pulse"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-tight text-primary">In Progress: Mar -
+                                Apr</span>
+                        </div>
+                    </div>
+
+                    <!-- 4. Nutrient Application -->
+                    <div
+                        class="bg-white dark:bg-card-dark p-6 rounded-[32px] shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="size-12 rounded-2xl bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                                <span class="material-icons-round">science</span>
+                            </div>
+                            <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Step 04</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Nutrient Application</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Apply DAP at planting
+                            and Top-dress with CAN when the maize is knee-high (V6 stage) to maximize ear development.
+                        </p>
+                        <div class="pt-4 border-t border-slate-50 dark:border-slate-800/50 flex items-center gap-2">
+                            <span class="size-2 rounded-full bg-emerald-500"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-tight text-slate-400">Scheduled:
+                                May</span>
+                        </div>
+                    </div>
+
+                    <!-- 5. Irrigation -->
+                    <div
+                        class="bg-white dark:bg-card-dark p-6 rounded-[32px] shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="size-12 rounded-2xl bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                                <span class="material-icons-round">water_drop</span>
+                            </div>
+                            <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Step 05</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Irrigation</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Critical during
+                            silking and tasseling. Maintain consistent moisture levels to prevent kernel abortion and
+                            poor filling.</p>
+                        <div class="pt-4 border-t border-slate-50 dark:border-slate-800/50 flex items-center gap-2">
+                            <span class="size-2 rounded-full bg-blue-500"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-tight text-slate-400">Monitor: Jun -
+                                Jul</span>
+                        </div>
+                    </div>
+
+                    <!-- 6. Pest & Disease Advisory -->
+                    <div
+                        class="bg-white dark:bg-card-dark p-6 rounded-[32px] shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="size-12 rounded-2xl bg-rose-100 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center">
+                                <span class="material-icons-round">pest_control</span>
+                            </div>
+                            <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Step 06</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Pest & Disease Advisory</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Scout for Fall
+                            Armyworm and Stalk borer. Use Integrated Pest Management (IPM) techniques for sustainable
+                            control.</p>
+                        <div class="pt-4 border-t border-slate-50 dark:border-slate-800/50 flex items-center gap-2">
+                            <span class="size-2 rounded-full bg-rose-500"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-tight text-slate-400">Continuous
+                                Scouting</span>
+                        </div>
+                    </div>
+
+                    <!-- 7. Harvesting -->
+                    <div
+                        class="bg-white dark:bg-card-dark p-6 rounded-[32px] shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="size-12 rounded-2xl bg-yellow-100 dark:bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 flex items-center justify-center">
+                                <span class="material-icons-round">content_cut</span>
+                            </div>
+                            <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Step 07</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Harvesting</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Harvest when the
+                            black layer appears at the base of the kernel. This indicates physiological maturity and
+                            maximum weight.</p>
+                        <div class="pt-4 border-t border-slate-50 dark:border-slate-800/50 flex items-center gap-2">
+                            <span class="size-2 rounded-full bg-yellow-500"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-tight text-slate-400">Est: Aug -
+                                Sep</span>
+                        </div>
+                    </div>
+
+                    <!-- 8. Storage -->
+                    <div
+                        class="bg-white dark:bg-card-dark p-6 rounded-[32px] shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="size-12 rounded-2xl bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 flex items-center justify-center">
+                                <span class="material-icons-round">inventory_2</span>
+                            </div>
+                            <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Step 08</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Storage</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Dry maize below 13.5%
+                            moisture. Use hermetic bags or improved cribs to prevent weevil damage and Aflatoxin.</p>
+                        <div class="pt-4 border-t border-slate-50 dark:border-slate-800/50 flex items-center gap-2">
+                            <span class="size-2 rounded-full bg-slate-400"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-tight text-slate-400">Post-Harvest
+                                Care</span>
+                        </div>
+                    </div>
+
+                    <!-- 9. Intercropping & Rotation -->
+                    <div
+                        class="bg-white dark:bg-card-dark p-6 rounded-[32px] shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="size-12 rounded-2xl bg-indigo-100 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+                                <span class="material-icons-round">published_with_changes</span>
+                            </div>
+                            <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Step 09</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Intercropping & Rotation</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Intercrop with beans
+                            for nitrogen fixation. Rotate with non-grass crops to break pest cycles and restore soil
+                            life.</p>
+                        <div class="pt-4 border-t border-slate-50 dark:border-slate-800/50 flex items-center gap-2">
+                            <span class="size-2 rounded-full bg-indigo-500"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-tight text-slate-400">Next Season
+                                Prep</span>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Smart Seasonal Tips -->
-                <div class="bg-primary p-6 rounded-[32px] text-white overflow-hidden relative group">
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="material-icons-round text-accent">lightbulb</span>
-                            <h3 class="font-bold text-sm uppercase tracking-widest text-secondary">Expert Tip for
-                                September</h3>
+                <!-- Expert Advisory Card -->
+                <div class="bg-primary p-6 md:p-10 rounded-[40px] text-white overflow-hidden relative group">
+                    <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="material-icons-round text-accent">auto_awesome</span>
+                                <h3 class="font-bold text-sm uppercase tracking-widest text-secondary">Proactive
+                                    Advisory</h3>
+                            </div>
+                            <h2 class="text-3xl font-black leading-tight mb-4">Early Rain Alert: Adjust Sowing Schedule
+                            </h2>
+                            <p class="text-sm font-medium leading-relaxed mb-6 opacity-90">Forecasts indicate localized
+                                showers starting next week. We recommend completing Land Prep (Step 01) immediately to
+                                stay on track for the optimal sowing window.</p>
+                            <div class="flex flex-wrap gap-4">
+                                <button
+                                    class="bg-white text-primary px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-tight hover:scale-105 transition-transform">Download
+                                    Full Guide</button>
+                                <button
+                                    class="bg-secondary text-primary px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-tight hover:scale-105 transition-transform">Consult
+                                    Nimiro AI</button>
+                            </div>
                         </div>
-                        <p class="text-sm font-medium leading-relaxed mb-4">Expect localized showers next week. Ideal
-                            time for top-dressing wheat and preparing storage facilities for the upcoming harvest.</p>
-                        <button
-                            class="bg-secondary text-primary px-5 py-2 rounded-xl text-xs font-black uppercase tracking-tight hover:scale-105 transition-transform">Get
-                            Detailed Plan</button>
+                        <div class="hidden md:flex justify-end">
+                            <div class="glass-card p-8 rounded-[32px] max-w-sm">
+                                <h4 class="font-black text-secondary uppercase tracking-widest text-[10px] mb-4">Monthly
+                                    Metric Focus</h4>
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-xs font-bold opacity-70">Soil Moisture</span>
+                                        <span class="text-xs font-black">62% (Optimal)</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-xs font-bold opacity-70">Rain Likelihood</span>
+                                        <span class="text-xs font-black">75% (Next 7d)</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-xs font-bold opacity-70">Pest Risk</span>
+                                        <span
+                                            class="text-xs font-black text-accent font-bold italic">Low-Moderate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Decorative background icon -->
                     <span
-                        class="material-icons-round absolute -bottom-4 -right-4 text-9xl opacity-10 group-hover:scale-110 transition-transform">eco</span>
+                        class="material-icons-round absolute -bottom-10 -right-10 text-[240px] opacity-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-700">agriculture</span>
                 </div>
             </main>
 
             <!-- Bottom Nav -->
             {% include 'bottom_nav.html' %}
         </div>
+
+        <!-- Mobile Chatbox -->
+        {% include 'chatbox.html' %}
     </div>
 
     <script>
