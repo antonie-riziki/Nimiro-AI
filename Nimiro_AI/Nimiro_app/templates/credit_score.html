@@ -87,17 +87,22 @@
                     <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
                         <!-- Score Circle -->
                         <div class="relative flex items-center justify-center shrink-0">
-                            <svg class="w-48 h-48 transform -rotate-90">
-                                <circle class="text-slate-100 dark:text-slate-800" cx="96" cy="96" fill="transparent"
-                                    r="84" stroke="currentColor" stroke-width="16"></circle>
-                                <circle class="text-primary" cx="96" cy="96" fill="transparent" r="84"
-                                    stroke="currentColor" stroke-dasharray="528" stroke-dashoffset="75"
-                                    stroke-width="16" stroke-linecap="round"></circle>
+                            <svg class="w-48 h-48 md:w-56 md:h-56 transform -rotate-90" viewBox="0 0 200 200">
+                                <!-- Background Track -->
+                                <circle class="text-slate-100 dark:text-slate-800" cx="100" cy="100" r="80"
+                                    fill="transparent" stroke="currentColor" stroke-width="18"></circle>
+                                <!-- Progress Bar -->
+                                <circle class="text-primary" cx="100" cy="100" r="80" fill="transparent"
+                                    stroke="currentColor" stroke-width="18" stroke-linecap="round"
+                                    stroke-dasharray="502.65" stroke-dashoffset="74"></circle>
                             </svg>
-                            <div class="absolute flex flex-col items-center justify-center text-center mt-2">
+                            <!-- Score Label -->
+                            <div class="absolute flex flex-col items-center justify-center text-center">
                                 <span
-                                    class="text-5xl font-black text-slate-900 dark:text-slate-100 leading-none">725</span>
-                                <span class="text-xs font-medium text-slate-500 mt-1">out of 850</span>
+                                    class="text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white mt-1">725</span>
+                                <span
+                                    class="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-widest mt-1">out
+                                    of 850</span>
                             </div>
                         </div>
 
