@@ -14,36 +14,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 
-<script>
-    tailwind.config = {
-        darkMode: "class",
-        theme: {
-            extend: {
-                colors: {
-                    primary: "#2D4F35", // Deep Earthy Green
-                    secondary: "#9BC53D", // Fresh Leaf Green
-                    accent: "#FFB800", // Sun Gold
-                    "background-light": "#F8F9FA",
-                    "background-dark": "#121212",
-                    "card-light": "#FFFFFF",
-                    "card-dark": "#1E1E1E",
-                },
-                fontFamily: {
-                    display: ["Inter", "sans-serif"],
-                    body: ["Inter", "sans-serif"],
-                },
-                borderRadius: {
-                    DEFAULT: "16px",
-                },
-            },
-        },
-    };
-
-    function toggleDarkMode() {
-        document.documentElement.classList.toggle('dark');
-    }
-</script>
-
 
 <style>
     /* Chatbot CSS */
@@ -189,7 +159,7 @@
     .chatbot-input {
         padding: 20px;
         border-top: 1px solid #e1e8ed;
-        background: white;
+        background: #2D4F35;
     }
 
     .input-group {
@@ -208,7 +178,7 @@
     }
 
     .chat-input:focus {
-        border-color: #667eea;
+        border-color: #2D4F35;
     }
 
     .send-btn {
@@ -449,7 +419,7 @@
                 botMessage.className = 'chat-message';
                 botMessage.innerHTML = `
                     <div class="message-avatar bot-avatar">
-                        <img src="https://monkedo-static.s3.eu-central-1.amazonaws.com/component-icons/supabase.png" alt="EcoVerse Logo"  
+                        <img src="https://monkedo-static.s3.eu-central-1.amazonaws.com/component-icons/supabase.png" alt="Nimiro AI Logo"  
                     style="height: 30px;">
                     </div>
                     <div class="message-content">${data.response}</div>
