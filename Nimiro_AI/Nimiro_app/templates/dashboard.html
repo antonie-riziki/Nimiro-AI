@@ -222,16 +222,7 @@
                                 <!-- Wrapper to enable horizontal scrolling on mobile, grid on desktop -->
                                 <div
                                     class="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible no-scrollbar pb-2 md:pb-0 -mx-5 px-5 md:mx-0 md:px-0">
-                                    <a href="{% url 'crop-calendar' %}"
-                                        class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 sm:w-auto">
-                                        <div
-                                            class="w-14 h-14 md:w-full md:aspect-square rounded-2xl bg-[#895129] text-white flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-105 group-active:scale-95 transition-all">
-                                            <span class="material-icons-round">calendar_today</span>
-                                        </div>
-                                        <span
-                                            class="text-[10px] md:text-[11px] font-semibold text-slate-600 dark:text-slate-400">Crop
-                                            Calendar</span>
-                                    </a>
+
                                     <a href="{% url 'analysis-page' %}"
                                         class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 md:w-auto">
                                         <div
@@ -242,6 +233,18 @@
                                             class="text-[10px] md:text-[11px] font-semibold text-slate-600 dark:text-slate-400">Soil
                                             analysis</span>
                                     </a>
+
+                                    <a href="{% url 'crop-calendar' %}"
+                                        class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 sm:w-auto">
+                                        <div
+                                            class="w-14 h-14 md:w-full md:aspect-square rounded-2xl bg-[#895129] text-white flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-105 group-active:scale-95 transition-all">
+                                            <span class="material-icons-round">calendar_today</span>
+                                        </div>
+                                        <span
+                                            class="text-[10px] md:text-[11px] font-semibold text-slate-600 dark:text-slate-400">Crop
+                                            Calendar</span>
+                                    </a>
+
                                     <a href="{% url 'farming-guide' %}"
                                         class="flex-shrink-0 flex flex-col items-center gap-2 group w-16 md:w-auto">
                                         <div
