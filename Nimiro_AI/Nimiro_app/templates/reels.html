@@ -73,126 +73,126 @@
 
 
         <!-- Main Content: Reels Feed -->
-        <main class="flex-1 relative overflow-hidden h-full">
-            <!-- Scroll Container -->
-            <div class="h-screen overflow-y-scroll snap-y snap-mandatory">
-                {% for reel in reels %}
-                <!-- Video Background Container -->
-                <div class="absolute inset-0 w-full h-full bg-slate-900">
-                    <video class="w-full h-full object-cover" autoplay loop muted playsinline>
-                        <source src="{{ reel.video_url }}" type="video/mp4">
-                    </video>
-                </div>
+        <!-- <main class="flex-1 relative overflow-hidden h-full"> -->
 
-                <!-- Content Overlay -->
-                <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t-overlay pb-24">
-                    <div class="flex flex-row items-end px-4 gap-4 mb-6">
-
-                        <!-- Left Side: Content Info -->
-                        <div class="flex-1 space-y-4">
-
-                            <!-- Farmer Profile -->
-                            <div class="flex items-center gap-3">
-                                <div class="w-12 h-12 rounded-full border-2 border-[#86A673] overflow-hidden">
-                                    <img alt="Farmer Avatar" class="w-full h-full object-cover"
-                                        src="https://via.placeholder.com/150" />
-                                </div>
-                                <div>
-                                    <p class="text-[#E8F5E9] font-bold text-shadow-md">
-                                        {{ reel.creator }}
-                                    </p>
-                                    <button
-                                        class="text-[10px] font-bold bg-[#86A673] text-[#1B2B1E] px-3 py-0.5 rounded-full uppercase mt-0.5">
-                                        Follow
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Caption & Hashtags -->
-                            <div class="space-y-1">
-                                <p class="text-white text-sm text-shadow-md line-clamp-2">
-                                    {{ reel.summary }}
-                                </p>
-
-                                <div class="flex flex-wrap gap-2">
-                                    {% for tag in reel.hashtags %}
-                                    <span class="text-[#86A673] font-bold text-xs text-shadow-md">
-                                        #{{ tag }}
-                                    </span>
-                                    {% endfor %}
-                                </div>
-                            </div>
-
-                            <!-- Audio Scroll -->
-                            <div class="flex items-center gap-2 overflow-hidden max-w-[200px]">
-                                <span class="material-icons-round text-white text-sm">music_note</span>
-                                <div class="whitespace-nowrap">
-                                    <p class="text-white text-xs animate-pulse">
-                                        {{ reel.title }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Right Side: Engagement Buttons -->
-                        <div class="flex flex-col items-center gap-6 pb-2">
-
-                            <!-- Like -->
-                            <button
-                                class="flex flex-col items-center hover:opacity-80 transition-opacity active:scale-90 duration-100">
-                                <div class="p-2">
-                                    <span class="material-icons-round text-white text-3xl text-shadow-md"
-                                        style="font-variation-settings: 'FILL' 1;">favorite</span>
-                                </div>
-                                <span class="text-white text-xs font-bold text-shadow-md">
-                                    {{ reel.likes }}
-                                </span>
-                            </button>
-
-                            <!-- Comment -->
-                            <button
-                                class="flex flex-col items-center hover:opacity-80 transition-opacity active:scale-90 duration-100">
-                                <div class="p-2">
-                                    <span class="material-icons-round text-white text-3xl text-shadow-md"
-                                        style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
-                                </div>
-                                <span class="text-white text-xs font-bold text-shadow-md">
-                                    {{ reel.comments }}
-                                </span>
-                            </button>
-
-                            <!-- Share -->
-                            <button
-                                class="flex flex-col items-center hover:opacity-80 transition-opacity active:scale-90 duration-100">
-                                <div class="p-2">
-                                    <span class="material-icons-round text-white text-3xl text-shadow-md">share</span>
-                                </div>
-                                <span class="text-white text-xs font-bold text-shadow-md">
-                                    {{ reel.shares }}
-                                </span>
-                            </button>
-
-                            <!-- More -->
-                            <button class="flex flex-col items-center hover:opacity-80 transition-opacity">
-                                <div class="p-2">
-                                    <span
-                                        class="material-icons-round text-white text-3xl text-shadow-md">more_vert</span>
-                                </div>
-                            </button>
-
-                            <!-- Vinyl Disk -->
-                            <div
-                                class="w-8 h-8 rounded-full border-2 border-white/40 overflow-hidden animate-spin shadow-lg">
-                                <img alt="Audio Disc" class="w-full h-full object-cover"
-                                    src="https://via.placeholder.com/50" />
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                {% endfor %}
+        <!-- Scroll Container -->
+        <div class="h-screen overflow-y-scroll snap-y snap-mandatory">
+            {% for reel in reels %}
+            <!-- Video Background Container -->
+            <div class="absolute inset-0 w-full h-full bg-slate-900">
+                <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                    <source src="{{ reel.video_url }}" type="video/mp4">
+                </video>
             </div>
-        </main>
+
+            <!-- Content Overlay -->
+            <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t-overlay pb-24">
+                <div class="flex flex-row items-end px-4 gap-4 mb-6">
+
+                    <!-- Left Side: Content Info -->
+                    <div class="flex-1 space-y-4">
+
+                        <!-- Farmer Profile -->
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full border-2 border-[#86A673] overflow-hidden">
+                                <img alt="Farmer Avatar" class="w-full h-full object-cover"
+                                    src="https://via.placeholder.com/150" />
+                            </div>
+                            <div>
+                                <p class="text-[#E8F5E9] font-bold text-shadow-md">
+                                    {{ reel.creator }}
+                                </p>
+                                <button
+                                    class="text-[10px] font-bold bg-[#86A673] text-[#1B2B1E] px-3 py-0.5 rounded-full uppercase mt-0.5">
+                                    Follow
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Caption & Hashtags -->
+                        <div class="space-y-1">
+                            <p class="text-white text-sm text-shadow-md line-clamp-2">
+                                {{ reel.summary }}
+                            </p>
+
+                            <div class="flex flex-wrap gap-2">
+                                {% for tag in reel.hashtags %}
+                                <span class="text-[#86A673] font-bold text-xs text-shadow-md">
+                                    #{{ tag }}
+                                </span>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Audio Scroll -->
+                        <div class="flex items-center gap-2 overflow-hidden max-w-[200px]">
+                            <span class="material-icons-round text-white text-sm">music_note</span>
+                            <div class="whitespace-nowrap">
+                                <p class="text-white text-xs animate-pulse">
+                                    {{ reel.title }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Engagement Buttons -->
+                    <div class="flex flex-col items-center gap-6 pb-2">
+
+                        <!-- Like -->
+                        <button
+                            class="flex flex-col items-center hover:opacity-80 transition-opacity active:scale-90 duration-100">
+                            <div class="p-2">
+                                <span class="material-icons-round text-white text-3xl text-shadow-md"
+                                    style="font-variation-settings: 'FILL' 1;">favorite</span>
+                            </div>
+                            <span class="text-white text-xs font-bold text-shadow-md">
+                                {{ reel.likes }}
+                            </span>
+                        </button>
+
+                        <!-- Comment -->
+                        <button
+                            class="flex flex-col items-center hover:opacity-80 transition-opacity active:scale-90 duration-100">
+                            <div class="p-2">
+                                <span class="material-icons-round text-white text-3xl text-shadow-md"
+                                    style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+                            </div>
+                            <span class="text-white text-xs font-bold text-shadow-md">
+                                {{ reel.comments }}
+                            </span>
+                        </button>
+
+                        <!-- Share -->
+                        <button
+                            class="flex flex-col items-center hover:opacity-80 transition-opacity active:scale-90 duration-100">
+                            <div class="p-2">
+                                <span class="material-icons-round text-white text-3xl text-shadow-md">share</span>
+                            </div>
+                            <span class="text-white text-xs font-bold text-shadow-md">
+                                {{ reel.shares }}
+                            </span>
+                        </button>
+
+                        <!-- More -->
+                        <button class="flex flex-col items-center hover:opacity-80 transition-opacity">
+                            <div class="p-2">
+                                <span class="material-icons-round text-white text-3xl text-shadow-md">more_vert</span>
+                            </div>
+                        </button>
+
+                        <!-- Vinyl Disk -->
+                        <div
+                            class="w-8 h-8 rounded-full border-2 border-white/40 overflow-hidden animate-spin shadow-lg">
+                            <img alt="Audio Disc" class="w-full h-full object-cover"
+                                src="https://via.placeholder.com/50" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- </main> -->
         <!-- BottomNavBar -->
         {% include 'bottom_nav.html' %}
 
