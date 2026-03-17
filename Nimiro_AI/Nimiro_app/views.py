@@ -236,27 +236,104 @@ def crop_calendar(request):
 import random
 PEXELS_URL = "https://api.pexels.com/videos/search"
 
-HISTORICAL_QUERIES = [
+REEL_QUERIES = [
+    # General agriculture
     "farming",
-    "local farmers",
     "agriculture",
-    "farmers",
-    "planting",
-    "harvesting",
-    "irrigation",
-    "fertilizer",
-    "pest control",
-    "crop rotation",
-    "soil testing",
-    "market prices",
-    "climate change adaptation",
-    "organic farming",
+    "modern farming",
+    "smart farming",
+    "precision agriculture",
+    "digital agriculture",
     "sustainable farming",
+    "organic farming",
+    "regenerative agriculture",
+
+    # African context (high priority)
+    "african farming",
+    "african agriculture",
+    "kenyan farmers",
+    "east africa farming",
+    "smallholder farmers africa",
+    "rural farming africa",
+    "african agritech",
+    "agritech africa",
+    "farming in kenya",
+    "nigeria agriculture",
+    "uganda farming",
+    "tanzania agriculture",
+
+    # Farmers & activities
+    "local farmers",
+    "small scale farmers",
+    "subsistence farming",
+    "planting season",
+    "harvesting crops",
+    "farm work daily life",
+    "tractor farming africa",
+
+    # Crops & production
+    "maize farming",
+    "wheat farming",
+    "rice farming africa",
+    "horticulture farming",
+    "vegetable farming",
+    "fruit farming africa",
+    "greenhouse farming",
+
+    # Soil & inputs
+    "soil testing",
+    "soil health",
+    "fertilizer application",
+    "organic fertilizer",
+    "compost farming",
+    "soil nutrients",
+
+    # Water & climate
+    "irrigation systems",
+    "drip irrigation africa",
+    "climate smart agriculture",
+    "climate change farming",
+    "drought farming solutions",
+    "rainfed agriculture",
+
+    # Pest & crop management
+    "pest control farming",
+    "crop protection",
+    "integrated pest management",
+    "crop rotation",
+    "weed control farming",
+
+    # Technology & innovation (important for Nimiro AI context)
+    "iot farming",
+    "ai in agriculture",
+    "smart sensors farming",
+    "farm data analytics",
+    "precision farming technology",
+    "satellite farming data",
+    "agriculture startups africa",
+    "farm innovation africa",
+
+    # Market & business
+    "farmers market africa",
+    "market prices crops",
+    "selling farm produce",
+    "agriculture supply chain",
+    "post harvest handling",
+    "farm to market africa",
+    "agribusiness africa",
+
+    # Finance & impact
+    "farmer financing",
+    "agriculture loans africa",
+    "crop insurance africa",
+    "financial inclusion farmers",
+    "farmer success stories",
+    "agriculture impact stories"
 ]
 
 
 def reels(request):
-    query = random.choice(HISTORICAL_QUERIES)
+    query = random.choice(REEL_QUERIES)
 
     headers = {
         "Authorization": PEXEL_API_KEY
