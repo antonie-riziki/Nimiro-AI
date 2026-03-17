@@ -233,8 +233,63 @@ def analysis_page(request):
 def crop_calendar(request):
     return render(request, 'crop_calendar.html')
 
+import random
+PEXELS_URL = "https://api.pexels.com/videos/search"
+
+HISTORICAL_QUERIES = [
+    "farming",
+    "local farmers",
+    "agriculture",
+    "kenyan farmers",
+    "planting",
+    "harvesting",
+    "irrigation",
+    "fertilizer",
+    "pest control",
+    "crop rotation",
+    "soil testing",
+    "market prices",
+    "climate change adaptation",
+    "organic farming",
+    "sustainable farming",
+]
+
+
 def reels(request):
-    return render(request, 'reels.html')
+    query = random.choice(HISTORICAL_QUERIES)
+
+    headers = {
+        "Authorization": PEXEL_API_KEY
+    }
+
+    params = {
+        "query": query,
+        "per_page": 20
+    }
+
+    response = requests.get(PEXELS_URL, headers=headers, params=params)
+
+    if response.status_code != 200:
+        return render(request, "reels.html", {"reels": []})
+
+
+    data = response.json()
+
+    reels = []
+
+    for video in data.get("videos", []):
+        reels.append({
+            "title": "Farming",
+            "summary": "Farming style footage",
+            "video_url": video["video_files"][0]["link"],
+            "creator": "Pexels",
+            "likes": "—",
+            "comments": "—",
+            "shares": "—",
+            "hashtags": ["Farming", "Agriculture"]
+        })
+
+    return render(request, "reels.html", {"reels": reels})
 
 
 @csrf_exempt
