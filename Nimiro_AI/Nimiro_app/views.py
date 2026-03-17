@@ -233,6 +233,10 @@ def analysis_page(request):
 def crop_calendar(request):
     return render(request, 'crop_calendar.html')
 
+def reels(request):
+    return render(request, 'reels.html')
+
+
 @csrf_exempt
 def chatbot_response(request):
     if request.method == 'POST':

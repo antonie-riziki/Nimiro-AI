@@ -16,6 +16,7 @@ urlpatterns = [
     path('analysis/', views.analysis_page, name='analysis-page'),
     path('credit_score/', views.credit_score, name='credit-score'),
     path('crop_calendar/', views.crop_calendar, name='crop-calendar'),
+    path('reels/', views.reels, name='reels'),
     path('chatbot-response/', views.chatbot_response, name='chatbot-response')
 
 ]
