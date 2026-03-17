@@ -240,7 +240,7 @@ HISTORICAL_QUERIES = [
     "farming",
     "local farmers",
     "agriculture",
-    "kenyan farmers",
+    "farmers",
     "planting",
     "harvesting",
     "irrigation",
