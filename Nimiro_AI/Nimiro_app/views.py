@@ -264,7 +264,7 @@ def reels(request):
 
     params = {
         "query": query,
-        "per_page": 20
+        "per_page": 7
     }
 
     response = requests.get(PEXELS_URL, headers=headers, params=params)
